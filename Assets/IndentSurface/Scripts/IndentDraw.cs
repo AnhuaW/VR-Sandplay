@@ -97,7 +97,7 @@ namespace Wacki.IndentSurface
             Rect screenRect = new Rect();
             // put the center of the stamp at the actual draw position
             screenRect.x = x - stampTexture.width * 0.5f;
-            screenRect.y = (targetTexture.height + y) + stampTexture.height * 0.5f;
+            screenRect.y = (targetTexture.height - y) - stampTexture.height * 0.5f;
             screenRect.width = stampTexture.width;
             screenRect.height = stampTexture.height;
 
