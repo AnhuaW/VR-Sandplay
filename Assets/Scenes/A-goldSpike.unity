@@ -3592,6 +3592,7 @@ MonoBehaviour:
   tempTestRenderTexture: {fileID: 8400000, guid: 0c4342ef03b61e64da1efb005c607284, type: 2}
   rtWidth: 200
   rtHeight: 200
+  snow_sound: {fileID: 8300000, guid: 4369b2330ab50374a80756146e386373, type: 3}
   mat: {fileID: 2100000, guid: 28a97ac2a0b001d4d9a0c876fa978968, type: 2}
 --- !u!64 &870014691
 MeshCollider:

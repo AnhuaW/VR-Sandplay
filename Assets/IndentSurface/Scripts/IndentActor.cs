@@ -35,6 +35,7 @@ public class IndentActor : MonoBehaviour
                 return;
 
             texDraw.IndentAt(hit);
+          
         }
     }
 }

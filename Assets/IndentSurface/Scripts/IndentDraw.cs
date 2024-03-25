@@ -10,6 +10,8 @@ namespace Wacki.IndentSurface
         public RenderTexture tempTestRenderTexture;
         public int rtWidth = 512;
         public int rtHeight = 512;
+        public AudioClip snow_sound;
+        public AudioSource audio_source;
 
         private RenderTexture targetTexture;
         private RenderTexture auxTexture;
@@ -117,9 +119,16 @@ namespace Wacki.IndentSurface
             Graphics.DrawTexture(screenRect, stampTexture, mat);
 
             GL.PopMatrix();
-            RenderTexture.active = null; 
+            RenderTexture.active = null;
+            PlaySFXonDraw();
+        }
 
-
+        void PlaySFXonDraw()
+        {
+            if (!audio_source.isPlaying)
+            {
+                AudioSource.PlayClipAtPoint(snow_sound, transform.position);
+            }
         }
 
         void ElevateAt(float x, float y, float alpha)
