@@ -6,8 +6,8 @@
         _SpecGlossMap("Specular", 2D) = "white" {}
         _Indentmap ("Indentation", 2D) = "white" {}
         _Tess("Tessellation", Range(1,32)) = 4
-        _IndentDepth ("Indentation Depth", Range(-0.5,0.5)) = 0.1
-        _ElevationHeight ("Elevation Height", Range (0,0.5)) = 0.1
+        _IndentDepth ("Indentation Depth", Range(0,0.5)) = 0.1
+        _ElevateOrIndent("ElevateOrIndent", Range (-1,1)) = -1
 	}
 	SubShader {
 		Tags { "RenderType"="Opaque" }
@@ -45,6 +45,8 @@
 		fixed4 _Color;
         float _Tess;
         float _IndentDepth;
+        float _ElevateOrIndent;
+        
 
 
         float4 tessFixed()
@@ -80,6 +82,7 @@
             //v.vertex.x += sin(_Time.y * 1.0f + v.vertex.y * 1.0f) * 1.0f;
             float height = tex2Dlod(_Indentmap, float4(v.texcoord.xy, 0, 0));
             v.vertex.z += height * _IndentDepth;
+            v.vertex.z *= _ElevateOrIndent;
             v.normal = normalize(calcNormal(v.texcoord) + v.normal);
         }
 

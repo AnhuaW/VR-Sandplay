@@ -16,6 +16,7 @@ namespace Wacki.IndentSurface
         public float interval = 0.5f;
         public bool is_drawing = false;
         public bool is_playing = false;
+        public float ElevateOrIndent = 1f;
 
         private RenderTexture targetTexture;
         private RenderTexture auxTexture;
@@ -81,6 +82,8 @@ namespace Wacki.IndentSurface
             {
                 StartCoroutine(PlaySFXonDraw(interval));
             }
+
+            mat.SetFloat("_ElevateOrIndent", ElevateOrIndent);
         }
 
         /// <summary>
@@ -143,44 +146,9 @@ namespace Wacki.IndentSurface
             is_playing = false;
         }
 
-        void ElevateAt(float x, float y, float alpha)
+        public void Vert(float value)
         {
-            Graphics.Blit(targetTexture, auxTexture);
-
-            // activate our render texture
-            RenderTexture.active = targetTexture;
-
-            GL.PushMatrix();
-            GL.LoadPixelMatrix(0, targetTexture.width, targetTexture.height, 0);
-
-            x = Mathf.Round(x);
-            y = Mathf.Round(y);
-
-            // setup rect for our indent texture stamp to draw into
-            Rect screenRect = new Rect();
-            // put the center of the stamp at the actual draw position
-            screenRect.x = x - stampTexture.width * 0.5f;
-            screenRect.y = (targetTexture.height + y) - stampTexture.height * 0.5f;
-            screenRect.width = stampTexture.width;
-            screenRect.height = stampTexture.height;
-
-            var tempVec = new Vector4();
-
-            tempVec.x = screenRect.x / ((float)targetTexture.width);
-            tempVec.y = 1 - (screenRect.y / (float)targetTexture.height);
-            tempVec.z = screenRect.width / targetTexture.width;
-            tempVec.w = screenRect.height / targetTexture.height;
-            tempVec.y -= tempVec.w;
-
-            mat.SetTexture("_MainTex", stampTexture);
-            mat.SetVector("_SourceTexCoords", tempVec);
-            mat.SetTexture("_SurfaceTex", auxTexture);
-
-            // Draw the texture
-            Graphics.DrawTexture(screenRect, stampTexture, mat);
-
-            GL.PopMatrix();
-            RenderTexture.active = null;
+            ElevateOrIndent = value;
         }
 
     }
