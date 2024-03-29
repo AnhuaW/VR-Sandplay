@@ -1,12 +1,13 @@
-﻿Shader "IndentSurface/DentableSurface" {
+﻿Shader"IndentSurface/DentableSurface" {
 	Properties {
 		_Color ("Color", Color) = (1,1,1,1)
 		_MainTex ("Albedo (RGB)", 2D) = "white" {}
         _BumpMap ("Bumpmap", 2D) = "bump" {}
         _SpecGlossMap("Specular", 2D) = "white" {}
-        _Indentmap ("Indentation", 2d) = "white" {}
+        _Indentmap ("Indentation", 2D) = "white" {}
         _Tess("Tessellation", Range(1,32)) = 4
-        _IndentDepth ("Indentation Depth", Range(0,0.5)) = 0.1
+        _IndentDepth ("Indentation Depth", Range(-0.5,0.5)) = 0.1
+        _ElevationHeight ("Elevation Height", Range (0,0.5)) = 0.1
 	}
 	SubShader {
 		Tags { "RenderType"="Opaque" }
@@ -22,7 +23,7 @@
 		// Use shader model 3.0 target, to get nicer looking lighting
 		#pragma target 3.0
 
-			sampler2D _MainTex;
+		sampler2D _MainTex;
         sampler2D _Indentmap;
         sampler2D _SpecGlossMap;
         sampler2D _BumpMap;

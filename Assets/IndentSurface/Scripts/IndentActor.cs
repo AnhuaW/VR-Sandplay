@@ -28,7 +28,7 @@ public class IndentActor : MonoBehaviour
 
         //check raycast distance before creatng indentation
         RaycastHit hit;
-        if (Physics.Raycast(transform.position, Vector3.down, out hit) && hit.distance < 0.1f)
+        if (Physics.Raycast(transform.position, Vector3.down, out hit) && hit.distance < 0.2f)
         {
             var texDraw = hit.collider.gameObject.GetComponent<IndentDraw>();
             if (texDraw == null)

@@ -12,6 +12,10 @@ namespace Wacki.IndentSurface
         public int rtHeight = 512;
         public AudioClip snow_sound;
         public AudioSource audio_source;
+        public Vector4 tempVec = new Vector4();
+        public float interval = 0.5f;
+        public bool is_drawing = false;
+        public bool is_playing = false;
 
         private RenderTexture targetTexture;
         private RenderTexture auxTexture;
@@ -72,6 +76,11 @@ namespace Wacki.IndentSurface
                 _prevMousePosition = hit.point;
                 IndentAt(hit);
             }
+
+            if (is_drawing && !is_playing)
+            {
+                StartCoroutine(PlaySFXonDraw(interval));
+            }
         }
 
         /// <summary>
@@ -103,7 +112,7 @@ namespace Wacki.IndentSurface
             screenRect.width = stampTexture.width;
             screenRect.height = stampTexture.height;
 
-            var tempVec = new Vector4();
+            //var tempVec = new Vector4();
 
             tempVec.x = screenRect.x / ((float)targetTexture.width);
             tempVec.y = 1 - (screenRect.y / (float)targetTexture.height);
@@ -120,15 +129,18 @@ namespace Wacki.IndentSurface
 
             GL.PopMatrix();
             RenderTexture.active = null;
-            PlaySFXonDraw();
+            is_drawing = true;
         }
 
-        void PlaySFXonDraw()
+        IEnumerator PlaySFXonDraw(float _interval)
         {
-            if (!audio_source.isPlaying)
+            is_playing = true;
+            while (true)
             {
                 AudioSource.PlayClipAtPoint(snow_sound, transform.position);
+                yield return new WaitForSeconds(_interval);
             }
+            is_playing = false;
         }
 
         void ElevateAt(float x, float y, float alpha)
