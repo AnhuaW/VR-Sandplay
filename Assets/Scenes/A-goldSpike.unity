@@ -2248,7 +2248,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 439302037}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.297, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4478,7 +4478,7 @@ MonoBehaviour:
   snow_sound: {fileID: 8300000, guid: 4369b2330ab50374a80756146e386373, type: 3}
   audio_source: {fileID: 0}
   tempVec: {x: 0, y: 0, z: 0, w: 0}
-  interval: 0.5
+  interval: 0.4
   is_drawing: 0
   is_playing: 0
   ElevateOrIndent: 1
