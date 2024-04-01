@@ -659,6 +659,13 @@ MonoBehaviour:
   tempTestRenderTexture: {fileID: 8400000, guid: 0c4342ef03b61e64da1efb005c607284, type: 2}
   rtWidth: 256
   rtHeight: 256
+  snow_sound: {fileID: 0}
+  audio_source: {fileID: 0}
+  tempVec: {x: 0, y: 0, z: 0, w: 0}
+  interval: 0.5
+  is_drawing: 0
+  is_playing: 0
+  ElevateOrIndent: 1
   mat: {fileID: 2100000, guid: 28a97ac2a0b001d4d9a0c876fa978968, type: 2}
 --- !u!64 &178602652
 MeshCollider:
@@ -669,7 +676,7 @@ MeshCollider:
   m_GameObject: {fileID: 178602647}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
