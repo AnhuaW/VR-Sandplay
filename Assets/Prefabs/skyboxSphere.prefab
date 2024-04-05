@@ -124,6 +124,7 @@ GameObject:
   - component: {fileID: 1512933136893834166}
   - component: {fileID: 1512933136893834165}
   - component: {fileID: 7101186149145993536}
+  - component: {fileID: -2261779930375260766}
   m_Layer: 0
   m_Name: skyboxSphere
   m_TagString: Untagged
@@ -141,7 +142,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1.2, z: 2}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1512933138315732612}
   - {fileID: 1512933136681501359}
@@ -224,6 +225,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   amplitude: 0.05
   frequency: 0.25
+--- !u!114 &-2261779930375260766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1512933136893834161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9a56ad1569835f458d0f75a1989c69f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1512933137354635136
 GameObject:
   m_ObjectHideFlags: 0
