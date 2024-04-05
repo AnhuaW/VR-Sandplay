@@ -72,16 +72,16 @@ namespace Wacki.IndentSurface
             _mouseDrag = Input.GetMouseButton(0);
             
 
-            if (_mouseDrag && (draw || Vector3.Distance(hit.point, _prevMousePosition) > drawThreshold))
+           /* if (_mouseDrag && (draw || Vector3.Distance(hit.point, _prevMousePosition) > drawThreshold))
             {
                 _prevMousePosition = hit.point;
                 IndentAt(hit);
-            }
+            }*/
 
-            if (is_drawing && !is_playing)
+            /*if (is_drawing && !is_playing)
             {
                 StartCoroutine(PlaySFXonDraw(interval));
-            }
+            }*/
 
             mat.SetFloat("_ElevateOrIndent", ElevateOrIndent);
         }
