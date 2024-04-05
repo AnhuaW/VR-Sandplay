@@ -166,6 +166,10 @@ namespace Oculus.Interaction
 
         public void PlayAudio()
         {
+            if(_audioSource.enabled == false)
+            {
+                _audioSource.enabled = true;
+            }
             // Check if random chance is set
             float pick = Random.Range(0.0f, 100.0f);
             if (_chanceToPlay < 100 && pick > _chanceToPlay)

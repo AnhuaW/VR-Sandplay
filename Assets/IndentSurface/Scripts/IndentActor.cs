@@ -1,29 +1,30 @@
 ﻿using UnityEngine;
 using System.Collections;
 using Wacki.IndentSurface;
-
+using UnityEngine.Events;
 
 /// <summary>
 /// Simple control script for our sphere that leaves a track in the snow.
 /// </summary>
 /// 
-[RequireComponent(typeof(AudioSource))]
 public class IndentActor : MonoBehaviour
 {
+    private Vector3 lastPosition;
+    private bool isMoving;
     [Range(0.0f, 0.2f)]
     // DrawDelta
     public float drawDelta = 0.01f;
     private Vector3 _prevDrawPos;
     public float interval = 0.3f;
-    public bool is_playing = false;
-    public AudioSource audioSource;
-    public AudioClip snow_clip;
     private Rigidbody rb;
+    public AudioSource snow_audioSource;
+    public UnityEvent StartDrawingSFX = new UnityEvent();
+    public UnityEvent StopDrawingSFX = new UnityEvent();
 
     private void Start()
     {
-        audioSource = GetComponent<AudioSource>();
         rb = GetComponent<Rigidbody>();
+        lastPosition = transform.position;
     }
 
     void Update()
@@ -42,32 +43,46 @@ public class IndentActor : MonoBehaviour
 
         //check raycast distance before creatng indentation
         RaycastHit hit;
-        if (Physics.Raycast(transform.position, Vector3.down, out hit) && hit.distance < 0.2f)
+
+        if (Physics.Raycast(transform.position, Vector3.down, out hit) && hit.distance <= 0.1f)
         {
             var texDraw = hit.collider.gameObject.GetComponent<IndentDraw>();
             if (texDraw == null)
                 return;
 
             texDraw.IndentAt(hit);
-            if (!is_playing)
+            if (isMoving && !snow_audioSource.isPlaying)
             {
-                StartCoroutine(PlaySFXonDraw());
+                StartDrawingSFX.Invoke();
+            }
+            else
+            {
+                StopDrawingSFX.Invoke();
             }
         }
-    }
 
-    public IEnumerator PlaySFXonDraw()
-    {
-        is_playing = true;
-        while (true)
+        //Check if the object is moving
+        if (transform.position != lastPosition)
         {
-            if (rb.velocity.x > 0.1f || rb.velocity.y > 0.1f || rb.velocity.z > 0.1f)
+            // If they're different, the GameObject has moved.
+            if (!isMoving)
             {
-                audioSource.PlayOneShot(snow_clip);
-                yield return new WaitForSeconds(interval);
-                is_playing = false;
-                audioSource.Stop();
+                isMoving = true;
+                Debug.Log("Started Moving");
             }
         }
+        else
+        {
+            // If they're the same, the GameObject is not moving.
+            if (isMoving)
+            {
+                isMoving = false;
+                Debug.Log("Stopped Moving");
+            }
+        }
+
+        // Update lastPosition for the next frame's comparison
+        lastPosition = transform.position;
+
     }
 }
