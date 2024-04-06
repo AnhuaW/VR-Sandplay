@@ -10,12 +10,8 @@ namespace Wacki.IndentSurface
         public RenderTexture tempTestRenderTexture;
         public int rtWidth = 512;
         public int rtHeight = 512;
-        public AudioClip snow_sound;
-        public AudioSource audio_source;
         public Vector4 tempVec = new Vector4();
         public float interval = 0.5f;
-        public bool is_drawing = false;
-        public bool is_playing = false;
         public float ElevateOrIndent = 1f;
 
         private RenderTexture targetTexture;
@@ -70,18 +66,6 @@ namespace Wacki.IndentSurface
             draw = Input.GetMouseButtonDown(0);
             // set draggin state
             _mouseDrag = Input.GetMouseButton(0);
-            
-
-            if (_mouseDrag && (draw || Vector3.Distance(hit.point, _prevMousePosition) > drawThreshold))
-            {
-                _prevMousePosition = hit.point;
-                IndentAt(hit);
-            }
-
-            if (is_drawing && !is_playing)
-            {
-                StartCoroutine(PlaySFXonDraw(interval));
-            }
 
             mat.SetFloat("_ElevateOrIndent", ElevateOrIndent);
         }
@@ -132,19 +116,8 @@ namespace Wacki.IndentSurface
 
             GL.PopMatrix();
             RenderTexture.active = null;
-            is_drawing = true;
         }
 
-        IEnumerator PlaySFXonDraw(float _interval)
-        {
-            is_playing = true;
-            while (true)
-            {
-                AudioSource.PlayClipAtPoint(snow_sound, transform.position);
-                yield return new WaitForSeconds(_interval);
-            }
-            is_playing = false;
-        }
 
         public void Vert(float value)
         {
