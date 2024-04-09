@@ -10990,6 +10990,7 @@ GameObject:
   - component: {fileID: 1945038373}
   - component: {fileID: 1945038374}
   - component: {fileID: 1945038375}
+  - component: {fileID: 1945038376}
   m_Layer: 0
   m_Name: Stone-InteractableToHand
   m_TagString: Untagged
@@ -11089,6 +11090,18 @@ MonoBehaviour:
   _whenRespawned:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1945038376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1945038370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e618cc451508c15418ce68fd53905ea4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1957864291
 GameObject:
   m_ObjectHideFlags: 0
@@ -13089,7 +13102,7 @@ MonoBehaviour:
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_renderer: {fileID: 2064165940652421324}
   m_maskType: 0
 --- !u!1001 &2064165941020460314
