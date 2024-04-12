@@ -12,6 +12,7 @@ public class ShelfMovement : MonoBehaviour
     private float low = -1.4f;
     [SerializeField]
     private float duration = 2f;
+    public GameObject shelfVisual;
 
     private Coroutine movementCoroutine; // To track the currently running coroutine
 
@@ -64,6 +65,11 @@ public class ShelfMovement : MonoBehaviour
 
     public IEnumerator ChangeHeight(float target)
     {
+        if(target == high)
+        {
+            shelfVisual.SetActive(true);
+        }
+
         float elapsedTime = 0f;
         Vector3 startPosition = transform.localPosition; // Capture the start position
         while (elapsedTime < duration)
@@ -78,5 +84,10 @@ public class ShelfMovement : MonoBehaviour
         // Ensure the object reaches the exact end position
         transform.localPosition = new Vector3(startPosition.x, target, startPosition.z);
         Debug.Log("Movement completed!");
+
+        if(target == low)
+        {
+            shelfVisual.SetActive(false);
+        }
     }
 }
