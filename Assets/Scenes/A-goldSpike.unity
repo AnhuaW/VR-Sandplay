@@ -2060,6 +2060,10 @@ PrefabInstance:
       propertyPath: snow_audioSource
       value: 
       objectReference: {fileID: 1811807981}
+    - target: {fileID: 739019082341676683, guid: 756b3788dc2704f41832b054cc1afd6b, type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 739019082341676684, guid: 756b3788dc2704f41832b054cc1afd6b, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -3990,6 +3994,10 @@ PrefabInstance:
       propertyPath: snow_audioSource
       value: 
       objectReference: {fileID: 1811807981}
+    - target: {fileID: 739019082341676683, guid: 756b3788dc2704f41832b054cc1afd6b, type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 739019082341676684, guid: 756b3788dc2704f41832b054cc1afd6b, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -4486,21 +4494,25 @@ PrefabInstance:
       propertyPath: snow_audioSource
       value: 
       objectReference: {fileID: 1811807981}
+    - target: {fileID: 739019082341676683, guid: 756b3788dc2704f41832b054cc1afd6b, type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 739019082341676684, guid: 756b3788dc2704f41832b054cc1afd6b, type: 3}
       propertyPath: m_RootOrder
       value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 739019082341676684, guid: 756b3788dc2704f41832b054cc1afd6b, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.3
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 739019082341676684, guid: 756b3788dc2704f41832b054cc1afd6b, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.3
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 739019082341676684, guid: 756b3788dc2704f41832b054cc1afd6b, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.3
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 739019082341676684, guid: 756b3788dc2704f41832b054cc1afd6b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4674,6 +4686,10 @@ PrefabInstance:
       propertyPath: snow_audioSource
       value: 
       objectReference: {fileID: 1811807981}
+    - target: {fileID: 739019082341676683, guid: 756b3788dc2704f41832b054cc1afd6b, type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 739019082341676684, guid: 756b3788dc2704f41832b054cc1afd6b, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -4780,15 +4796,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 739019083637679032, guid: 756b3788dc2704f41832b054cc1afd6b, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.08
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 739019083637679032, guid: 756b3788dc2704f41832b054cc1afd6b, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.08
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 739019083637679032, guid: 756b3788dc2704f41832b054cc1afd6b, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.08
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 739019083637679032, guid: 756b3788dc2704f41832b054cc1afd6b, type: 3}
       propertyPath: m_ConstrainProportionsScale
@@ -5036,21 +5052,25 @@ PrefabInstance:
       propertyPath: snow_audioSource
       value: 
       objectReference: {fileID: 1811807981}
+    - target: {fileID: 739019082341676683, guid: 756b3788dc2704f41832b054cc1afd6b, type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 739019082341676684, guid: 756b3788dc2704f41832b054cc1afd6b, type: 3}
       propertyPath: m_RootOrder
       value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 739019082341676684, guid: 756b3788dc2704f41832b054cc1afd6b, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.1
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 739019082341676684, guid: 756b3788dc2704f41832b054cc1afd6b, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.1
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 739019082341676684, guid: 756b3788dc2704f41832b054cc1afd6b, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.1
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 739019082341676684, guid: 756b3788dc2704f41832b054cc1afd6b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5910,6 +5930,10 @@ PrefabInstance:
       propertyPath: snow_audioSource
       value: 
       objectReference: {fileID: 1811807981}
+    - target: {fileID: 739019082341676683, guid: 756b3788dc2704f41832b054cc1afd6b, type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 739019082341676684, guid: 756b3788dc2704f41832b054cc1afd6b, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -6883,6 +6907,10 @@ PrefabInstance:
       propertyPath: snow_audioSource
       value: 
       objectReference: {fileID: 1811807981}
+    - target: {fileID: 739019082341676683, guid: 756b3788dc2704f41832b054cc1afd6b, type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 739019082341676684, guid: 756b3788dc2704f41832b054cc1afd6b, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -7335,6 +7363,10 @@ PrefabInstance:
       propertyPath: snow_audioSource
       value: 
       objectReference: {fileID: 1811807981}
+    - target: {fileID: 739019082341676683, guid: 756b3788dc2704f41832b054cc1afd6b, type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 739019082341676684, guid: 756b3788dc2704f41832b054cc1afd6b, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -9929,6 +9961,10 @@ PrefabInstance:
       propertyPath: snow_audioSource
       value: 
       objectReference: {fileID: 1811807981}
+    - target: {fileID: 739019082341676683, guid: 756b3788dc2704f41832b054cc1afd6b, type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 739019082341676684, guid: 756b3788dc2704f41832b054cc1afd6b, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -10391,21 +10427,25 @@ PrefabInstance:
       propertyPath: snow_audioSource
       value: 
       objectReference: {fileID: 1811807981}
+    - target: {fileID: 739019082341676683, guid: 756b3788dc2704f41832b054cc1afd6b, type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 739019082341676684, guid: 756b3788dc2704f41832b054cc1afd6b, type: 3}
       propertyPath: m_RootOrder
       value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 739019082341676684, guid: 756b3788dc2704f41832b054cc1afd6b, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.1
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 739019082341676684, guid: 756b3788dc2704f41832b054cc1afd6b, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.1
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 739019082341676684, guid: 756b3788dc2704f41832b054cc1afd6b, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.1
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 739019082341676684, guid: 756b3788dc2704f41832b054cc1afd6b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -12041,21 +12081,25 @@ PrefabInstance:
       propertyPath: snow_audioSource
       value: 
       objectReference: {fileID: 1811807981}
+    - target: {fileID: 739019082341676683, guid: 756b3788dc2704f41832b054cc1afd6b, type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 739019082341676684, guid: 756b3788dc2704f41832b054cc1afd6b, type: 3}
       propertyPath: m_RootOrder
       value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 739019082341676684, guid: 756b3788dc2704f41832b054cc1afd6b, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.8
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 739019082341676684, guid: 756b3788dc2704f41832b054cc1afd6b, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.8
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 739019082341676684, guid: 756b3788dc2704f41832b054cc1afd6b, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.8
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 739019082341676684, guid: 756b3788dc2704f41832b054cc1afd6b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -12328,6 +12372,10 @@ PrefabInstance:
       propertyPath: snow_audioSource
       value: 
       objectReference: {fileID: 1811807981}
+    - target: {fileID: 739019082341676683, guid: 756b3788dc2704f41832b054cc1afd6b, type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 739019082341676684, guid: 756b3788dc2704f41832b054cc1afd6b, type: 3}
       propertyPath: m_RootOrder
       value: -1
