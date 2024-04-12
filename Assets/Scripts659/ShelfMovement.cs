@@ -35,7 +35,24 @@ public class ShelfMovement : MonoBehaviour
         }
     }
 
-    void StartChangeHeight(float target)
+    public void ShowShelf()
+    {
+        if (this.transform.localPosition.y < high)
+        {
+            StartChangeHeight(high);
+        }
+    }
+
+    public void HideShelf()
+    {
+        if (this.transform.localPosition.y > low)
+        {
+            StartChangeHeight(low);
+        }
+
+    }
+
+    public void StartChangeHeight(float target)
     {
         // Stop the current coroutine before starting a new one to avoid conflicts
         if (movementCoroutine != null)

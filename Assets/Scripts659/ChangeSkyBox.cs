@@ -4,32 +4,23 @@ using UnityEngine;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using Oculus;
 
 public class ChangeSkyBox : MonoBehaviour
 {
     public Material skybox;
-    public Image fadeImage;
     public float fadeSpeed = 0.8f;
+    public OVRScreenFade screenFade;
 
     public IEnumerator FadeSkybox(Material newSkyboxMaterial)
     {
-        yield return StartCoroutine(FadeTo(1)); // Fade to black
+        //fade to black
+        screenFade.FadeOut();
+        yield return new WaitForSeconds(screenFade.fadeTime);
         RenderSettings.skybox = newSkyboxMaterial; // Change the skybox
         DynamicGI.UpdateEnvironment(); // Update GI to reflect new skybox
-        yield return StartCoroutine(FadeTo(0)); // Fade back to clear
-    }
-
-    IEnumerator FadeTo(float targetAlpha)
-    {
-        Color color = fadeImage.color;
-        float alphaDiff = Mathf.Abs(color.a - targetAlpha);
-        while (alphaDiff > 0.01f)
-        {
-            color.a = Mathf.MoveTowards(color.a, targetAlpha, fadeSpeed * Time.deltaTime);
-            fadeImage.color = color;
-            alphaDiff = Mathf.Abs(color.a - targetAlpha);
-            yield return null;
-        }
+        //fade back in
+        screenFade.FadeIn();
     }
 
     public void ChangeSkyboxWithFade()
